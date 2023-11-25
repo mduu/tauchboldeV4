@@ -1,0 +1,8 @@
+{
+    "azureFunctions.deploySubpath": "src/formmailer/bin/Release/net6.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectSubpath": "src/formmailer",
+    "azureFunctions.preDeployTask": "publish (functions)"
+}
