@@ -30,7 +30,11 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch --account-name tbwebsitegen4 --overwrite --auth-mode key -d '$web' -s ./src/website
-            
+          
+      - name: Purge CDN
+        run:
+          az cdn endpoint purge -n ${{ secrets.AZURE_CDN_ENDPOINT }} --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --content-paths "/*" --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --no-wait
+
 #      - name: Purge CDN endpoint
 #        uses: azure/CLI@v1
 #        with:
